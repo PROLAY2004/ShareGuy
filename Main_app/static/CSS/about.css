@@ -1,0 +1,82 @@
+/* about.css */
+
+body {
+  background-color: #eee; /* Light gray background */
+  color: #333; /* Dark text for contrast */
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.about-container {
+  max-width: 800px;
+  margin: 10% auto;
+  padding: 30px;
+  background-color: #ffffff; /* White container background */
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.about-container h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #2e5e8c; /* Dark blue for headings */
+}
+
+.about-container h2 {
+  font-size: 1.8rem;
+  margin-top: 30px;
+  margin-bottom: 15px;
+  color: #2e5e8c; /* Dark blue for headings */
+}
+
+.about-container p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  color: #555; /* Slightly darker gray for text */
+}
+
+.about-container ul {
+  list-style-type: none;
+  padding: 0;
+  text-align: left;
+}
+
+.about-container ul li {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 10px;
+  color: #555; /* Slightly darker gray for text */
+}
+
+.about-container ul li strong {
+  color: #2e5e8c; /* Dark blue for strong text */
+}
+
+.features, .why-shareguy, .limitations {
+  margin-bottom: 30px;
+}
+
+.features ul, .why-shareguy ul, .limitations ul {
+  padding-left: 20px;
+}
+
+.features ul li::before, .why-shareguy ul li::before, .limitations ul li::before {
+  content: "•";
+  color: #2e5e8c; /* Dark blue for bullet points */
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}
+
+.intro {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #333; /* Dark text for introduction */
+}

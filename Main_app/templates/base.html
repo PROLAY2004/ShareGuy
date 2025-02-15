@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <title>ShareGuy | File Sharing</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'CSS/base.css' %}">
+  {% block static %}{% endblock %}
+  <style>
+    body {
+      background-image: url("{% static 'Images/bg.jpg' %}");
+    }
+  </style>
+</head>
+
+<body>
+  <input type="checkbox" name="" id="hambarger-menu" style="display: none;">
+  <nav>
+    <h1>ShareGuy</h1>
+    <label for="hambarger-menu" class="menu-btn">
+      <div></div>
+      <div></div>
+      <div></div>
+    </label>
+    <ul class="menu">
+      {% if request.path == "/Home" %}<li><a href="Home" style="color: #ffbf00;font-weight: 700;">Home</a></li>{% else %}<li><a href="Home">Home</a></li>{% endif %}
+      {% if request.path == "/About" %}<li><a href="About" style="color: #ffbf00;font-weight: 700;">About</a></li>{% else %}<li><a href="About">About</a></li>{% endif %}
+      {% if request.path == "/Contact" %}<li><a href="Contact" style="color: #ffbf00;font-weight: 700;">Contact</a></li>{% else %}<li><a href="Contact">Contact</a></li>{% endif %}
+    </ul>
+    <ul class="menu-mob">
+      {% if request.path == "/Home" %}<li><a href="Home" style="color: #ffbf00;font-weight: 700;">Home</a></li>{% else %}<li><a href="Home">Home</a></li>{% endif %}
+      {% if request.path == "/About" %}<li><a href="About" style="color: #ffbf00;font-weight: 700;">About</a></li>{% else %}<li><a href="About">About</a></li>{% endif %}
+      {% if request.path == "/Contact" %}<li><a href="Contact" style="color: #ffbf00;font-weight: 700;">Contact</a></li>{% else %}<li><a href="Contact">Contact</a></li>{% endif %}
+    </ul>
+  </nav>
+
+  {% block main %}{% endblock %}
+</body>
+
+</html>

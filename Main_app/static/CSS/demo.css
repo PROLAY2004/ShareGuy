@@ -1,0 +1,35 @@
+.image-container .image img{
+    height: 300px;
+    width: 100%;
+    object-fit: cover;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    background-color: #0F1111;
+    }
+    
+    .image-container .image h3{
+    font-size: 20px;
+    text-align: center;
+    background-color: #0F1111 ;
+    }
+
+    .image-container{
+        display:flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap:20px;
+        padding-top: 30px;
+        margin-bottom: 3%;
+        }
+        
+        .image-container .image{
+        padding:15px;
+        background-color: #0F1111;
+        border:2px solid #fff;
+        width: 350px;
+        border-radius: 5px;
+        animation: fadeIn .2s linear;
+        margin-bottom: 5%;
+        margin: 0 1%;
+        }
+        

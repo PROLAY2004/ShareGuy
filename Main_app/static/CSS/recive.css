@@ -1,0 +1,140 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    background-color: #121212;
+    scroll-behavior: smooth;
+    color: #eee;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Link styles */
+a {
+    background-color: #2b2b2b;
+}
+
+/* Navigation bar styles */
+.nav {
+    width: 100%;
+    border-bottom: 2px solid #eee;
+    background-color: #2b2b2b;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.nav img {
+    height: 50px;
+    background-color: #2b2b2b;
+}
+
+/* Heading styles */
+h2 {
+    text-align: center;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    font-size: 2rem;
+    color: #f5f5f5;
+}
+
+/* Form container styling */
+.form-container {
+    border: 2px solid #eee;
+    border-radius: 10px;
+    width: 50%;
+    margin: auto;
+    padding: 20px;
+    background-color: #2b2b2b;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.7);
+}
+
+.form-container:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.8);
+}
+
+/* Input styling */
+input[type="text"] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-top: 10px;
+    border: 2px solid #eee;
+    border-radius: 10px;
+    font-size: 1rem;
+    background-color: #333;
+    color: #ddd;
+    outline: none;
+    transition: background-color 0.3s;
+}
+label{
+    background-color: #2b2b2b;
+
+}
+input[type="text"]:focus {
+    background-color: #444;
+    color: #fff;
+}
+
+/* Button styling */
+button,a.download{
+    margin: 20px auto;
+    display: block;
+    width: 60%;
+    text-decoration: none;
+    text-align: center;
+    background-color: #FFEB3B;
+    color: #333;
+    padding: 12px;
+    border: 1px solid #eee;
+    border-radius: 25px;
+    font-size: 1.3rem;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+button:hover {
+    background-color: #FDD835;
+    transform: scale(1.05);
+}
+
+/* Loader styling */
+#loader {
+    display: none;
+    border: 16px solid #333;
+    border-top: 16px solid #FFEB3B;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    animation: spin 1.5s linear infinite;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Responsive design */
+@media (max-width: 535px) {
+    .form-container {
+        width: 90%;
+    }
+
+    button {
+        width: 80%;
+    }
+
+    .nav {
+        padding: 10px;
+    }
+
+    .nav img {
+        height: 40px;
+    }
+}
