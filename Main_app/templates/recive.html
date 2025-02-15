@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Download File</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'CSS/recive.css' %}">
+</head>
+<body>
+    <div id="loader"></div>
+    <div class="nav">
+        <a href="https://shareguy.netlify.app/">
+            <img src="https://shareguy.whf.bz//email/Share-GUY-5-7-2024.png" alt="Logo">
+        </a>
+    </div>
+    <h2>Download File</h2>
+{% if bool == 0 %}
+    <form method="post" id="emailForm" class="form-container">
+        {% csrf_token %}
+        <br>{{message}}<br>
+        <label for="code">Enter Unique Code:</label>
+        <input type="text" id="code" name="code" required>
+        <button type="submit" name="submit">Enter CODE</button>
+    </form>
+    
+{% else %}
+<form id="emailForm" class="form-container">
+    <a href="{{file}}" class="download" download>DOWNLOAD FILE</a>
+</form>
+{% endif %}
+</body>
+</html>

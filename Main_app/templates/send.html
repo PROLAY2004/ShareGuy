@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Send</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'CSS/send.css' %}">
+    <link rel="stylesheet" href="{% static 'CSS/code.css' %}">
+</head>
+
+<body>
+    <div id="loader"></div>
+    <div class="nav">
+        <a href="#">
+            <img src="{% static 'Images/shareguy.png' %}" alt="Logo">
+        </a>
+    </div>
+
+
+    {% if bool == 0 %}
+    <h2>Upload a File</h2>
+    <form id="emailForm" method="post" enctype="multipart/form-data" onsubmit="showLoader()">
+        {% csrf_token %}
+        <div class="form-container">
+            <input type="file" id="file" name="file" class="file-input" required>
+            <button type="submit" name="submit">Upload File</button>
+        </div>
+    </form>
+    {% else %}
+    <div class="box">
+        {{message}}<br>
+        {{ code|safe }}<br>
+    </div>
+    {% endif %}
+
+</body>
+<script>
+    function showLoader() {
+        document.getElementById("loader").style.display = "block";
+    }
+</script>
+
+</html>

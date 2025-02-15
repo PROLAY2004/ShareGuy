@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block static %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'CSS/home.css' %}">
+{% endblock %}
+
+    {% block main %}
+    <div class="image-container">
+        <div class="image" data-title="upload">
+            <a href="Email"><img src="{% static 'Images/Email.png' %}" alt="Send"></a>
+            <h3>Email</h3>
+        </div>
+        <div class="image" data-title="upload">
+            <a href="Send"><img src="{% static 'Images/send.png' %}" alt="Send"></a>
+            <h3>Send_file</h3>
+        </div>
+        <div class="image" data-title="Download">
+            <a href="Recive"><img src="{% static 'Images/recive.png' %}" alt="Recive"></a>
+            <h3>Recive_File</h3>
+        </div>
+    </div>
+    {% endblock %}

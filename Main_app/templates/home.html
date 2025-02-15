@@ -1,0 +1,129 @@
+{% extends 'base.html' %}
+
+{% block static %}
+{% load static %}
+{% if bool == 0 %}
+<link rel="stylesheet" href="{% static 'CSS/home.css' %}">
+{% else %}
+<link rel="stylesheet" href="{% static 'CSS/home2.css' %}">
+<script src="https://cdn.jsdelivr.net/npm/instascan@1.0.0/instascan.min.js"></script>
+{% endif %}
+{% endblock %}
+
+{% block main %}
+{% if bool == 0 %}
+<div class="container">
+  <h1>ShareGuy</h1>
+  <div class="tabs">
+    <div class="tab active" data-tab="upload">Upload</div>
+    <div class="tab" data-tab="download">Download</div>
+  </div>
+
+  <div id="upload" class="tab-content active">
+
+    <form method="POST" enctype="multipart/form-data">
+      {% csrf_token %}
+      <div class="input-field">
+        <input type="file" name="file" id="file-upload" />
+      </div>
+      <p class="message" id="msg">{{message}}</p>
+      <button type="submit" class="button">Upload File</button>
+    </form>
+
+  </div>
+
+  <div id="download" class="tab-content">
+
+    <form method="post">
+      {% csrf_token %}
+      <div class="input-field">
+        <input type="text" name="reciver_code" placeholder="Enter File ID to Download" />
+      </div>
+      <button type="submit" class="button">Download File</button>
+    </form>
+  </div>
+</div>
+
+{% else %}
+
+<div class="container">
+  <div class="qr">
+    <img
+      src="MEDIA_FILES/{{qr}}"
+      alt="QR" class="qrcode">
+    <p>Scan QR to download</p>
+  </div>
+  <p class="mob">OR</p>
+  <div class="send">
+    <form class="email" method="post">
+      {% csrf_token %}
+      <input type="email" name="email" placeholder="Enter your email...">
+      <input type="text" name="mail_code" style="display: none;" value="{{code}}">
+      <button>Send</button>
+    </form>
+    <p>OR</p>
+    <div class="scan">
+      <p>Unique Code is : <strong style="color: red;" id="uniqueCode">{{code}}</strong></p>
+      <button id="copyButton" onclick="myFunction()">Copy Code</button>
+    </div>
+  </div>
+
+</div>
+{% endif %}
+
+<script>
+  // Tabs functionality
+  document.querySelectorAll(".tab").forEach((tab) => {
+    tab.addEventListener("click", () => {
+      document.querySelectorAll(".tab").forEach((t) => t.classList.remove("active"));
+      document.querySelectorAll(".tab-content").forEach((content) => content.classList.remove("active"));
+      tab.classList.add("active");
+      document.getElementById(tab.dataset.tab).classList.add("active");
+    });
+  });
+
+  function removeElementAfterTime(elementId, duration) {
+    const element = document.getElementById(elementId);
+    if (element) {
+      setTimeout(() => {
+        element.style.display = "none";
+      }, duration);
+    }
+  }
+  removeElementAfterTime('msg', 2000);
+
+
+  function myFunction() {
+    // Get the text content from the <strong> element
+    var codeText = document.getElementById("uniqueCode").innerText;
+    
+    // Create a temporary textarea element
+    var tempTextArea = document.createElement("textarea");
+    tempTextArea.value = codeText;
+    
+    // Append the textarea to the body (it needs to be in the document to be selected)
+    document.body.appendChild(tempTextArea);
+    
+    // Select the content of the textarea
+    tempTextArea.select();
+    tempTextArea.setSelectionRange(0, 99999); // For mobile devices
+
+    // Copy the text inside the textarea to the clipboard
+    try {
+      var successful = document.execCommand("copy");
+      if (successful) {
+        alert("Code copied to clipboard: " + codeText);
+      } else {
+        alert("Failed to copy code.");
+      }
+    } catch (err) {
+      console.error("Error copying code: ", err);
+      alert("Failed to copy code.");
+    }
+    
+    // Remove the temporary textarea element from the document
+    document.body.removeChild(tempTextArea);
+  }
+
+</script>
+{% endblock %}

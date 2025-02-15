@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+
+{% block static %}
+{% load static %}
+  <link rel="stylesheet" href="{% static 'CSS/about.css' %}">
+{% endblock %}
+
+{% block main %}
+  <div class="about-container">
+    <h1>About ShareGuy</h1>
+    <p class="intro">
+      Welcome to <strong>ShareGuy</strong>, a simple and secure file-sharing platform where you can upload and share files without the need for login or registration.
+    </p>
+
+    <div class="features">
+      <h2>How It Works</h2>
+      <p>
+        ShareGuy allows you to upload files and share them effortlessly. Here's how it works:
+      </p>
+      <ul>
+        <li>
+          <strong>Upload Your File:</strong> Simply upload your file to our platform.
+        </li>
+        <li>
+          <strong>QR Code:</strong> After uploading, a QR code will be generated. Scan it with another device, and the file will start downloading.
+        </li>
+        <li>
+          <strong>Email Feature:</strong> Enter your email address, and the uploaded file will be sent directly to your inbox.
+        </li>
+        <li>
+          <strong>Unique Code:</strong> A unique code will be generated. Share this code with the recipient, and they can use it to download the file from the "Receive" section.
+        </li>
+      </ul>
+    </div>
+
+    <div class="why-shareguy">
+      <h2>Why Choose ShareGuy?</h2>
+      <ul>
+        <li>
+          <strong>No Login Required:</strong> You don't need to create an account or log in to use ShareGuy.
+        </li>
+        <li>
+          <strong>Privacy:</strong> We do not store any user information, ensuring your privacy.
+        </li>
+        <li>
+          <strong>Global Access:</strong> Share files from anywhere in the world with ease.
+        </li>
+        <li>
+          <strong>Safe File Transfer:</strong> Files are automatically cleared from our server after 5 minutes, ensuring secure and temporary storage.
+        </li>
+      </ul>
+    </div>
+
+    <div class="limitations">
+      <h2>Limitations</h2>
+      <ul>
+        <li>Maximum file size: <strong>20MB</strong>.</li>
+        <li>Files are valid for only <strong>5 minutes</strong> on our server.</li>
+        <li>No peer-to-peer connection.</li>
+        <li>Once an email is sent, the session is over, even if the email address is incorrect. There is no option for correction.</li>
+      </ul>
+    </div>
+  </div>
+{% endblock %}

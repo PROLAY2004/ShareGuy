@@ -1,0 +1,123 @@
+div.container{
+    display: flex;
+    width: 50%;
+    max-width:700px;
+    padding: 2%;
+    justify-content: space-between;
+    background-color: #eee;
+    border-radius: 10px;
+  }
+  .qr p,.send p{
+    color: #121212;
+    text-align: center;
+    font-size: 18px;
+  }
+  .send{
+    margin: 3% auto;
+  }
+  #copyButton{
+    margin-top: 5%;
+  }
+  .container .qr img{
+    width: 100%;
+    background-color: #eee;
+    border: 1px solid #121212;
+  }
+  input[type="email"]{
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #ddd;
+    font-size: 14px;
+    margin-bottom: 5%;
+    outline: none;
+    border-radius: 8px;
+  }
+  input[type="email"]:focus{
+    border: 2px solid #3a7bd5;
+  }
+  button{
+    background-color: #3a7bd5;
+  color: white;
+  padding: 12px;
+  text-decoration: none;
+  width: 100%;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s;
+  }
+  .scan a{
+    background-color: #3a7bd5;
+    color: white;
+    padding: 12px;
+    text-decoration: none;
+    width: 100%;
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    display: block;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s;  
+  }
+  form.email{
+    padding: 5%;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    margin-bottom: 3% ;
+  }
+  p.mob{
+    display: none;
+  }
+  .scan{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 5%;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    margin: 3% auto;
+  }
+  #download{
+    display: flex;
+  }
+  .qr{
+    width: 45%;
+    padding: 5%;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #eee;
+  }
+  @media(max-width: 1200px) {
+    div.container{
+      width: 65%;
+    }
+  }
+  @media(max-width: 900px) {
+    div.container{
+      width: 75%;
+    }
+  }
+  @media(max-width: 768px) {
+    div.container{
+      width: 85%;
+      flex-direction: column;
+      margin: 25% auto;
+    }
+    p.mob{
+      display: block;
+      margin-top: 5%;
+      color: #121212;
+      text-align: center;
+      font-size: 18px;
+    }
+    .qr{
+    width: 100%;
+  }
+  }
